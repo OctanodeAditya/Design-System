@@ -85,19 +85,24 @@ export class BapsMultiSelect extends LitElement {
       display: inline-flex;
       align-items: center;
       background-color: var(--color-grey-100);
-      color: var(--color-grey-600); /* Refined for closer image match */
+      color: var(--color-grey-600);
       font-size: 14px;
       font-weight: 500;
-      padding: 4px 10px;
-      padding-right: 28px; 
+      padding: 4px 12px; /* Compact padding by default */
       border-radius: 4px;
-      border: 1px solid var(--color-grey-200); /* Lighter border per image */
-      transition: all 0.2s ease;
+      border: 1px solid var(--color-grey-200);
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
       line-height: normal;
       position: relative; 
       height: 24px;
       box-sizing: border-box;
       user-select: none;
+      white-space: nowrap;
+    }
+
+    .tag:hover {
+      padding-right: 32px; /* Expand only on hover to make room for X */
+      background-color: var(--color-grey-200);
     }
 
     .tag-close {
@@ -106,15 +111,21 @@ export class BapsMultiSelect extends LitElement {
       align-items: center;
       justify-content: center;
       color: var(--color-grey-400);
-      transition: all 0.2s ease;
+      transition: opacity 0.2s ease;
       opacity: 0;
       font-size: 16px;
       position: absolute;
-      right: 6px; /* Slightly tighter per image */
+      right: 8px;
       top: 50%;
       transform: translateY(-50%);
       width: 14px;
       height: 14px;
+      pointer-events: none; /* Only tag hover triggers it initially */
+    }
+
+    .tag:hover .tag-close {
+      opacity: 1;
+      pointer-events: auto;
     }
 
     .tag:hover .tag-close {
