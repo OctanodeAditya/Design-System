@@ -85,13 +85,13 @@ export class BapsDropdown extends LitElement {
     .chevron {
       width: 20px;
       height: 20px;
-      transition: transform 0.2s ease-in-out;
-      fill: var(--color-grey-500, #64748B);
+      transition: all 0.2s ease-in-out;
+      color: var(--color-grey-500);
     }
 
     .active .chevron {
       transform: rotate(180deg);
-      fill: var(--color-primary-700, #B91C1C);
+      color: var(--color-primary-700);
     }
 
     /* Menu Styling */
@@ -168,18 +168,17 @@ export class BapsDropdown extends LitElement {
     this.dispatchEvent(new CustomEvent('change', { detail: { value: this.value } }));
   }
 
-  // Close on outside click
   connectedCallback() {
     super.connectedCallback();
-    document.addEventListener('click', this._handleOutsideClick.bind(this));
+    document.addEventListener('click', this._handleOutsideClick);
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
-    document.removeEventListener('click', this._handleOutsideClick.bind(this));
+    document.removeEventListener('click', this._handleOutsideClick);
   }
 
-  private _handleOutsideClick(e: MouseEvent) {
+  private _handleOutsideClick = (e: MouseEvent) => {
     if (this._isOpen && !e.composedPath().includes(this)) {
       this._isOpen = false;
     }

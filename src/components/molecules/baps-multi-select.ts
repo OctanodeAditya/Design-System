@@ -107,14 +107,14 @@ export class BapsMultiSelect extends LitElement {
     .chevron {
       width: 18px;
       height: 18px;
-      transition: transform 0.2s ease-in-out;
-      fill: var(--color-grey-500);
+      transition: all 0.2s ease-in-out;
+      color: var(--color-grey-500);
       flex-shrink: 0;
     }
 
     .active .chevron {
       transform: rotate(180deg);
-      fill: var(--color-primary-700);
+      color: var(--color-primary-700);
     }
 
     /* Menu Styling */
@@ -230,15 +230,15 @@ export class BapsMultiSelect extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
-    document.addEventListener('click', this._handleOutsideClick.bind(this));
+    document.addEventListener('click', this._handleOutsideClick);
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
-    document.removeEventListener('click', this._handleOutsideClick.bind(this));
+    document.removeEventListener('click', this._handleOutsideClick);
   }
 
-  private _handleOutsideClick(e: MouseEvent) {
+  private _handleOutsideClick = (e: MouseEvent) => {
     if (this._isOpen && !e.composedPath().includes(this)) {
       this._isOpen = false;
     }
