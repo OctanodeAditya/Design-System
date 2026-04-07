@@ -28,7 +28,7 @@ export default meta;
 type Story = StoryObj;
 
 export const Default: Story = {
-  args: { type: 'primary', size: 'lg', badge: '8', forceState: 'rest', showIcon: true },
+  args: { type: 'primary', size: 'lg', badge: '', forceState: 'rest', showIcon: true, showBadge: true },
 };
 
 export const UsageExamples: Story = {
@@ -40,66 +40,66 @@ export const UsageExamples: Story = {
 
         <!-- Row 1: Primary Default -->
         <div style="display: flex; gap: 24px; align-items: center;">
-          <baps-split-button type="primary" size="sm" badge="8" forceState="rest">Button Text</baps-split-button>
-          <baps-split-button type="primary" size="md" badge="8" forceState="rest">Button Text</baps-split-button>
-          <baps-split-button type="primary" size="lg" badge="8" forceState="rest">Button Text</baps-split-button>
-          <baps-split-button type="primary" size="xl" badge="8" forceState="rest">Button Text</baps-split-button>
+          <baps-split-button type="primary" size="sm" badge="" forceState="rest">Button Text</baps-split-button>
+          <baps-split-button type="primary" size="md" badge="" forceState="rest">Button Text</baps-split-button>
+          <baps-split-button type="primary" size="lg" badge="" forceState="rest">Button Text</baps-split-button>
+          <baps-split-button type="primary" size="xl" badge="" forceState="rest">Button Text</baps-split-button>
         </div>
 
         <!-- Row 2: Primary Hover -->
         <div style="display: flex; gap: 24px; align-items: center;">
-          <baps-split-button type="primary" size="sm" badge="8" forceState="hover">Button Text</baps-split-button>
-          <baps-split-button type="primary" size="md" badge="8" forceState="hover">Button Text</baps-split-button>
-          <baps-split-button type="primary" size="lg" badge="8" forceState="hover">Button Text</baps-split-button>
-          <baps-split-button type="primary" size="xl" badge="8" forceState="hover">Button Text</baps-split-button>
+          <baps-split-button type="primary" size="sm" badge="" forceState="hover">Button Text</baps-split-button>
+          <baps-split-button type="primary" size="md" badge="" forceState="hover">Button Text</baps-split-button>
+          <baps-split-button type="primary" size="lg" badge="" forceState="hover">Button Text</baps-split-button>
+          <baps-split-button type="primary" size="xl" badge="" forceState="hover">Button Text</baps-split-button>
         </div>
 
         <!-- Row 3: Primary Active -->
         <div style="display: flex; gap: 24px; align-items: center;">
-          <baps-split-button type="primary" size="sm" badge="8" forceState="active">Button Text</baps-split-button>
-          <baps-split-button type="primary" size="md" badge="8" forceState="active">Button Text</baps-split-button>
-          <baps-split-button type="primary" size="lg" badge="8" forceState="active">Button Text</baps-split-button>
-          <baps-split-button type="primary" size="xl" badge="8" forceState="active">Button Text</baps-split-button>
+          <baps-split-button type="primary" size="sm" badge="" forceState="active">Button Text</baps-split-button>
+          <baps-split-button type="primary" size="md" badge="" forceState="active">Button Text</baps-split-button>
+          <baps-split-button type="primary" size="lg" badge="" forceState="active">Button Text</baps-split-button>
+          <baps-split-button type="primary" size="xl" badge="" forceState="active">Button Text</baps-split-button>
         </div>
 
         <!-- Row 4: Secondary Default -->
         <div style="display: flex; gap: 24px; align-items: center;">
-          <baps-split-button type="secondary" size="sm" badge="8" forceState="rest">Button Text</baps-split-button>
-          <baps-split-button type="secondary" size="md" badge="8" forceState="rest">Button Text</baps-split-button>
-          <baps-split-button type="secondary" size="lg" badge="8" forceState="rest">Button Text</baps-split-button>
-          <baps-split-button type="secondary" size="xl" badge="8" forceState="rest">Button Text</baps-split-button>
+          <baps-split-button type="secondary" size="sm" badge="" forceState="rest">Button Text</baps-split-button>
+          <baps-split-button type="secondary" size="md" badge="" forceState="rest">Button Text</baps-split-button>
+          <baps-split-button type="secondary" size="lg" badge="" forceState="rest">Button Text</baps-split-button>
+          <baps-split-button type="secondary" size="xl" badge="" forceState="rest">Button Text</baps-split-button>
         </div>
 
         <!-- Row 5: Secondary Hover -->
         <div style="display: flex; gap: 24px; align-items: center;">
-          <baps-split-button type="secondary" size="sm" badge="8" forceState="hover">Button Text</baps-split-button>
-          <baps-split-button type="secondary" size="md" badge="8" forceState="hover">Button Text</baps-split-button>
-          <baps-split-button type="secondary" size="lg" badge="8" forceState="hover">Button Text</baps-split-button>
-          <baps-split-button type="secondary" size="xl" badge="8" forceState="hover">Button Text</baps-split-button>
+          <baps-split-button type="secondary" size="sm" badge="" forceState="hover">Button Text</baps-split-button>
+          <baps-split-button type="secondary" size="md" badge="" forceState="hover">Button Text</baps-split-button>
+          <baps-split-button type="secondary" size="lg" badge="" forceState="hover">Button Text</baps-split-button>
+          <baps-split-button type="secondary" size="xl" badge="" forceState="hover">Button Text</baps-split-button>
         </div>
 
         <!-- Row 6: Secondary Active -->
         <div style="display: flex; gap: 24px; align-items: center;">
-          <baps-split-button type="secondary" size="sm" badge="8" forceState="active">Button Text</baps-split-button>
-          <baps-split-button type="secondary" size="md" badge="8" forceState="active">Button Text</baps-split-button>
-          <baps-split-button type="secondary" size="lg" badge="8" forceState="active">Button Text</baps-split-button>
-          <baps-split-button type="secondary" size="xl" badge="8" forceState="active">Button Text</baps-split-button>
+          <baps-split-button type="secondary" size="sm" badge="" forceState="active">Button Text</baps-split-button>
+          <baps-split-button type="secondary" size="md" badge="" forceState="active">Button Text</baps-split-button>
+          <baps-split-button type="secondary" size="lg" badge="" forceState="active">Button Text</baps-split-button>
+          <baps-split-button type="secondary" size="xl" badge="" forceState="active">Button Text</baps-split-button>
         </div>
 
         <!-- Row 7: Disabled Flat -->
         <div style="display: flex; gap: 24px; align-items: center;">
-          <baps-split-button type="disabled-flat" size="sm" badge="8">Button Text</baps-split-button>
-          <baps-split-button type="disabled-flat" size="md" badge="8">Button Text</baps-split-button>
-          <baps-split-button type="disabled-flat" size="lg" badge="8">Button Text</baps-split-button>
-          <baps-split-button type="disabled-flat" size="xl" badge="8">Button Text</baps-split-button>
+          <baps-split-button type="disabled-flat" size="sm" badge="">Button Text</baps-split-button>
+          <baps-split-button type="disabled-flat" size="md" badge="">Button Text</baps-split-button>
+          <baps-split-button type="disabled-flat" size="lg" badge="">Button Text</baps-split-button>
+          <baps-split-button type="disabled-flat" size="xl" badge="">Button Text</baps-split-button>
         </div>
 
         <!-- Row 8: Disabled Outline -->
         <div style="display: flex; gap: 24px; align-items: center;">
-          <baps-split-button type="disabled-outline" size="sm" badge="8">Button Text</baps-split-button>
-          <baps-split-button type="disabled-outline" size="md" badge="8">Button Text</baps-split-button>
-          <baps-split-button type="disabled-outline" size="lg" badge="8">Button Text</baps-split-button>
-          <baps-split-button type="disabled-outline" size="xl" badge="8">Button Text</baps-split-button>
+          <baps-split-button type="disabled-outline" size="sm" badge="">Button Text</baps-split-button>
+          <baps-split-button type="disabled-outline" size="md" badge="">Button Text</baps-split-button>
+          <baps-split-button type="disabled-outline" size="lg" badge="">Button Text</baps-split-button>
+          <baps-split-button type="disabled-outline" size="xl" badge="">Button Text</baps-split-button>
         </div>
 
       </div>

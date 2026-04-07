@@ -177,6 +177,7 @@ export class MySplitButton extends LitElement {
   @property({ type: String }) badge = '';
   @property({ type: String }) forceState: 'rest' | 'hover' | 'active' = 'rest';
   @property({ type: Boolean }) showIcon = true;
+  @property({ type: Boolean }) showBadge = true;
 
   private handleMainClick() {
     if (this.type.includes('disabled')) return;
@@ -217,7 +218,7 @@ export class MySplitButton extends LitElement {
         <button class="main-action" @click="${this.handleMainClick}">
           ${this.showIcon ? html`<slot name="left-icon">${clockIcon}</slot>` : ''}
           <span class="text"><slot></slot></span>
-          ${this.badge ? html`<span class="badge">${this.badge}</span>` : ''}
+          ${(this.showBadge && this.badge) ? html`<span class="badge">${this.badge}</span>` : ''}
         </button>
         
         <!-- Divider -->
