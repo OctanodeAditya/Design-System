@@ -11,7 +11,8 @@ const meta = {
       size="${args.size}"
       badge="${args.badge}"
       forceState="${args.forceState}"
-      ?showIcon="${args.showIcon}">
+      ?showIcon="${args.showIcon}"
+      ?showBadge="${args.showBadge}">
       Button Text
     </baps-split-button>
   `,
@@ -21,6 +22,7 @@ const meta = {
     forceState: { control: 'select', options: ['rest', 'hover', 'active'] },
     badge: { control: 'text' },
     showIcon: { control: 'boolean' },
+    showBadge: { control: 'boolean' },
   },
 } satisfies Meta;
 
