@@ -35,14 +35,14 @@ export class MyRadio extends LitElement {
     }
 
     .circle.checked {
-      border-color: var(--color-grey-900);
+      border-color: var(--color-primary-700);
     }
     
     .dot {
       width: 10px;
       height: 10px;
       border-radius: 50%;
-      background-color: var(--color-grey-900);
+      background-color: var(--color-primary-700);
       opacity: 0;
       transform: scale(0);
       transition: all 0.2s ease;

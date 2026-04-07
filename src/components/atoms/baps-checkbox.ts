@@ -39,8 +39,8 @@ export class MyCheckbox extends LitElement {
     }
 
     .box.checked, .box.indeterminated {
-      background-color: var(--color-grey-900);
-      border-color: var(--color-grey-900);
+      background-color: var(--color-primary-700);
+      border-color: var(--color-primary-700);
     }
 
     .icon-vector {

@@ -35,17 +35,17 @@ export class MyButton extends LitElement {
 
     /* Types */
     .type-primary {
-      background-color: #B91C1C;
+      background-color: var(--color-primary-700);
       color: var(--color-white);
-      border: 1px solid #B91C1C;
+      border: 1px solid var(--color-primary-700);
     }
     .type-primary:hover:not(:disabled) {
-      background-color: #991B1B;
-      border-color: #991B1B;
+      background-color: var(--color-primary-600);
+      border-color: var(--color-primary-600);
     }
     .type-primary:active:not(:disabled) {
-      background-color: #7F1D1D;
-      border-color: #7F1D1D;
+      background-color: var(--color-primary-800);
+      border-color: var(--color-primary-800);
     }
 
     .type-secondary {
@@ -57,6 +57,9 @@ export class MyButton extends LitElement {
       background-color: var(--color-grey-100);
       border-color: var(--color-grey-400);
     }
+    .type-secondary:active:not(:disabled) {
+      background-color: var(--color-grey-200);
+    }
 
     .type-tertiary {
       background-color: transparent;
@@ -65,6 +68,9 @@ export class MyButton extends LitElement {
     }
     .type-tertiary:hover:not(:disabled) {
       background-color: var(--color-grey-100);
+    }
+    .type-tertiary:active:not(:disabled) {
+      background-color: var(--color-grey-200);
     }
 
     /* Disabled */

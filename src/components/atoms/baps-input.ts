@@ -53,8 +53,8 @@ export class MyInput extends LitElement {
     
     /* States */
     .input-wrapper.state-active {
-      border-color: var(--color-grey-900);
-      box-shadow: 0 0 0 1px var(--color-grey-900);
+      border-color: var(--color-primary-700);
+      box-shadow: 0 0 0 1px var(--color-primary-700);
     }
     .input-wrapper.state-error {
       border-color: var(--color-red-500) !important;

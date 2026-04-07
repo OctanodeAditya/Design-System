@@ -97,30 +97,30 @@ export class MySplitButton extends LitElement {
 
     /* ----- TYPE: PRIMARY (Crimson) ----- */
     .type-primary.split-wrapper {
-      background-color: #B91C1C; 
+      background-color: var(--color-primary-700); 
       color: var(--color-white);
-      border: 1px solid #B91C1C;
+      border: 1px solid var(--color-primary-700);
     }
     .type-primary button { color: var(--color-white); }
     .type-primary .divider { background-color: rgba(255, 255, 255, 0.3); }
-    .type-primary .badge { background-color: var(--color-white); color: #B91C1C; }
+    .type-primary .badge { background-color: var(--color-white); color: var(--color-primary-700); }
 
     /* Primary Interactive */
     .type-primary .main-action:hover,
     .type-primary.force-hover .main-action {
-      background-color: #DC2626; 
+      background-color: var(--color-primary-600); 
     }
     .type-primary .dropdown-action:hover,
     .type-primary.force-hover .dropdown-action {
-      background-color: #B91C1C; 
+      background-color: var(--color-primary-700); 
     }
     .type-primary .main-action:active,
     .type-primary.force-active .main-action {
-      background-color: #991B1B; 
+      background-color: var(--color-primary-800); 
     }
     .type-primary .dropdown-action:active,
     .type-primary.force-active .dropdown-action {
-      background-color: #7F1D1D; 
+      background-color: var(--color-primary-900); 
     }
 
     /* ----- TYPE: SECONDARY (Outline) ----- */
@@ -136,19 +136,19 @@ export class MySplitButton extends LitElement {
     /* Secondary Interactive */
     .type-secondary .main-action:hover,
     .type-secondary.force-hover .main-action {
-      background-color: var(--color-grey-50);
+      background-color: var(--color-grey-100);
     }
     .type-secondary .dropdown-action:hover,
     .type-secondary.force-hover .dropdown-action {
-      background-color: var(--color-grey-50);
+      background-color: var(--color-grey-100);
     }
     .type-secondary .main-action:active,
     .type-secondary.force-active .main-action {
-      background-color: var(--color-grey-100);
+      background-color: var(--color-grey-200);
     }
     .type-secondary .dropdown-action:active,
     .type-secondary.force-active .dropdown-action {
-      background-color: var(--color-grey-100);
+      background-color: var(--color-grey-200);
     }
 
     /* ----- DISABLED STATES ----- */
