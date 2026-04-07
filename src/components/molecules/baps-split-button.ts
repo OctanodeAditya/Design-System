@@ -80,14 +80,16 @@ export class MySplitButton extends LitElement {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      border-radius: 50%;
+      border-radius: 999px;
       font-weight: var(--font-weight-bold);
       transition: all 0.2s ease;
+      padding: 0 var(--spacing-4);
+      box-sizing: border-box;
     }
-    .size-sm .badge { width: 16px; height: 16px; font-size: 10px; }
-    .size-md .badge { width: 20px; height: 20px; font-size: 12px; }
-    .size-lg .badge { width: 24px; height: 24px; font-size: 14px; }
-    .size-xl .badge { width: 32px; height: 32px; font-size: 18px; }
+    .size-sm .badge { min-width: 16px; height: 16px; font-size: 10px; }
+    .size-md .badge { min-width: 20px; height: 20px; font-size: 12px; }
+    .size-lg .badge { min-width: 24px; height: 24px; font-size: 14px; }
+    .size-xl .badge { min-width: 32px; height: 32px; font-size: 18px; }
 
     /* =========================
        THEMES AND STATES
