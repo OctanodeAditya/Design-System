@@ -85,18 +85,19 @@ export class BapsMultiSelect extends LitElement {
       display: inline-flex;
       align-items: center;
       background-color: var(--color-grey-100);
-      color: var(--color-grey-700);
+      color: var(--color-grey-600); /* Refined for closer image match */
       font-size: 14px;
       font-weight: 500;
       padding: 4px 10px;
-      padding-right: 28px; /* Reserve space for the "x" */
+      padding-right: 28px; 
       border-radius: 4px;
-      border: 1px solid var(--color-grey-300);
+      border: 1px solid var(--color-grey-200); /* Lighter border per image */
       transition: all 0.2s ease;
       line-height: normal;
-      position: relative; /* Base for absolute "x" */
+      position: relative; 
       height: 24px;
       box-sizing: border-box;
+      user-select: none;
     }
 
     .tag-close {
@@ -109,7 +110,7 @@ export class BapsMultiSelect extends LitElement {
       opacity: 0;
       font-size: 16px;
       position: absolute;
-      right: 8px;
+      right: 6px; /* Slightly tighter per image */
       top: 50%;
       transform: translateY(-50%);
       width: 14px;
