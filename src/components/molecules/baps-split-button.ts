@@ -1,6 +1,12 @@
 import { LitElement, html, css } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import { customElement, property, state } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
+
+export interface SplitButtonOption {
+  label: string;
+  value: string;
+  divider?: boolean;
+}
 
 @customElement('baps-split-button')
 export class MySplitButton extends LitElement {
@@ -172,6 +178,61 @@ export class MySplitButton extends LitElement {
     .type-disabled-outline .divider { background-color: var(--color-grey-200); }
     .type-disabled-outline .badge { background-color: var(--color-white); border: 1px solid var(--color-grey-200); color: var(--color-grey-300); }
 
+    /* =========================
+       MENU STYLING
+       ========================= */
+    .menu-container {
+      position: relative;
+      display: inline-flex;
+    }
+
+    .menu {
+      position: absolute;
+      top: calc(100% + 4px);
+      left: 0;
+      min-width: 160px;
+      background: var(--color-white, #FFFFFF);
+      border: 1px solid var(--color-grey-200, #E2E8F0);
+      border-radius: 8px;
+      box-shadow: 0px 12px 16px rgba(0, 0, 0, 0.08), 0px 4px 6px rgba(0, 0, 0, 0.04);
+      z-index: 1000;
+      padding: 4px 0;
+      display: none;
+      animation: fadeIn 0.2s ease;
+    }
+
+    .menu.open {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .menu-item {
+      padding: 10px 16px;
+      font-size: var(--font-p-14-size, 14px);
+      color: var(--color-grey-700, #334155);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-8);
+      white-space: nowrap;
+    }
+
+    .menu-item:hover {
+      background-color: var(--color-grey-100, #F1F5F9);
+      color: var(--color-grey-900, #0F172A);
+    }
+
+    .menu-divider {
+      height: 1px;
+      background-color: var(--color-grey-100);
+      margin: 4px 0;
+    }
+
   `;
 
   @property({ type: String }) type: 'primary' | 'secondary' | 'disabled-flat' | 'disabled-outline' = 'primary';
@@ -180,15 +241,50 @@ export class MySplitButton extends LitElement {
   @property({ type: String }) forceState: 'rest' | 'hover' | 'active' = 'rest';
   @property({ type: Boolean }) showIcon = true;
   @property({ type: Boolean }) showBadge = true;
+  @property({ type: Array }) options: SplitButtonOption[] = [];
+
+  @state() private _isOpen = false;
+
+
+  connectedCallback() {
+    super.connectedCallback();
+    document.addEventListener('click', this._handleOutsideClick);
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    document.removeEventListener('click', this._handleOutsideClick);
+  }
+
+  private _handleOutsideClick = (e: MouseEvent) => {
+    if (this._isOpen && !e.composedPath().includes(this)) {
+      this._isOpen = false;
+    }
+  }
 
   private handleMainClick() {
     if (this.type.includes('disabled')) return;
     this.dispatchEvent(new CustomEvent('main-click', { bubbles: true, composed: true }));
   }
 
-  private handleDropdownClick() {
+  private handleDropdownClick(e: Event) {
     if (this.type.includes('disabled')) return;
+    
+    if (this.options.length > 0) {
+      e.stopPropagation();
+      this._isOpen = !this._isOpen;
+    }
+    
     this.dispatchEvent(new CustomEvent('dropdown-click', { bubbles: true, composed: true }));
+  }
+
+  private handleOptionClick(option: SplitButtonOption) {
+    this._isOpen = false;
+    this.dispatchEvent(new CustomEvent('select', { 
+      detail: { value: option.value, label: option.label },
+      bubbles: true, 
+      composed: true 
+    }));
   }
 
   render() {
@@ -215,21 +311,33 @@ export class MySplitButton extends LitElement {
     `;
 
     return html`
-      <div class="${classMap(wrapperClasses)}">
-        <!-- Main Zone -->
-        <button class="main-action" @click="${this.handleMainClick}">
-          ${this.showIcon ? html`<slot name="left-icon">${clockIcon}</slot>` : ''}
-          <span class="text"><slot></slot></span>
-          ${(this.showBadge && this.badge) ? html`<span class="badge">${this.badge}</span>` : ''}
-        </button>
-        
-        <!-- Divider -->
-        <div class="divider"></div>
-        
-        <!-- Dropdown Zone -->
-        <button class="dropdown-action" @click="${this.handleDropdownClick}">
-          <slot name="right-icon">${chevronIcon}</slot>
-        </button>
+      <div class="menu-container">
+        <div class="${classMap(wrapperClasses)}">
+          <!-- Main Zone -->
+          <button class="main-action" @click="${this.handleMainClick}">
+            ${this.showIcon ? html`<slot name="left-icon">${clockIcon}</slot>` : ''}
+            <span class="text"><slot></slot></span>
+            ${(this.showBadge && this.badge) ? html`<span class="badge">${this.badge}</span>` : ''}
+          </button>
+          
+          <!-- Divider -->
+          <div class="divider"></div>
+          
+          <!-- Dropdown Zone -->
+          <button class="dropdown-action" @click="${this.handleDropdownClick}">
+            <slot name="right-icon">${chevronIcon}</slot>
+          </button>
+        </div>
+
+        <!-- Popover Menu -->
+        <div class="menu ${this._isOpen ? 'open' : ''}">
+          ${this.options.map((option) => html`
+            ${option.divider ? html`<div class="menu-divider"></div>` : ''}
+            <div class="menu-item" @click="${() => this.handleOptionClick(option)}">
+              ${option.label}
+            </div>
+          `)}
+        </div>
       </div>
     `;
   }

@@ -23,6 +23,7 @@ const meta = {
     badge: { control: 'text' },
     showIcon: { control: 'boolean' },
     showBadge: { control: 'boolean' },
+    options: { control: 'object' },
   },
 } satisfies Meta;
 
@@ -31,6 +32,22 @@ type Story = StoryObj;
 
 export const Default: Story = {
   args: { type: 'primary', size: 'lg', badge: '', forceState: 'rest', showIcon: true, showBadge: true },
+};
+
+export const ActionPopup: Story = {
+  render: () => {
+    const options = [
+      { label: 'Update', value: 'update' },
+      { label: 'Delete', value: 'delete' },
+      { label: 'Angular.dev', value: 'angular' },
+      { label: 'Upload', value: 'upload', divider: true }
+    ];
+    return html`
+      <div style="padding: 100px; display: flex; justify-content: center;">
+        <baps-split-button .options="${options}">Save</baps-split-button>
+      </div>
+    `;
+  }
 };
 
 export const UsageExamples: Story = {

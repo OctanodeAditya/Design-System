@@ -88,8 +88,7 @@ export class BapsMultiSelect extends LitElement {
       color: var(--color-grey-600);
       font-size: 13px;
       font-weight: 500;
-      padding: 0 10px;
-      padding-right: 28px; /* Stable space reserved for absolute icon */
+      padding: 0 12px; /* Balanced, compact padding */
       border-radius: 4px;
       border: 1px solid var(--color-grey-200);
       transition: background-color 0.2s ease;
@@ -98,7 +97,7 @@ export class BapsMultiSelect extends LitElement {
       height: 24px;
       box-sizing: border-box;
       user-select: none;
-      max-width: 180px; /* Prevent runaway tag width */
+      max-width: 140px; 
     }
 
     .tag:hover {
@@ -122,12 +121,13 @@ export class BapsMultiSelect extends LitElement {
       opacity: 0;
       font-size: 16px;
       position: absolute;
-      right: 6px;
+      right: 4px;
       top: 50%;
       transform: translateY(-50%);
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
+      width: 18px;
+      height: 18px;
+      border-radius: 40%;
+      background-color: var(--color-grey-100);
       pointer-events: none;
     }
 
@@ -137,6 +137,7 @@ export class BapsMultiSelect extends LitElement {
     }
 
     .tag-close:hover {
+      background-color: var(--color-red-100);
       color: var(--color-red-600);
     }
 
