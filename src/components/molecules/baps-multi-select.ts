@@ -84,28 +84,36 @@ export class BapsMultiSelect extends LitElement {
     .tag {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
       background-color: var(--color-grey-100);
       color: var(--color-grey-700);
       font-size: 14px;
       font-weight: 500;
       padding: 4px 10px;
+      padding-right: 28px; /* Reserve space for the "x" */
       border-radius: 4px;
       border: 1px solid var(--color-grey-300);
       transition: all 0.2s ease;
       line-height: normal;
+      position: relative; /* Base for absolute "x" */
+      height: 24px;
+      box-sizing: border-box;
     }
 
     .tag-close {
       cursor: pointer;
       display: flex;
       align-items: center;
+      justify-content: center;
       color: var(--color-grey-400);
       transition: all 0.2s ease;
       opacity: 0;
       font-size: 16px;
-      width: 0;
-      overflow: hidden;
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 14px;
+      height: 14px;
     }
 
     .tag:hover .tag-close {
