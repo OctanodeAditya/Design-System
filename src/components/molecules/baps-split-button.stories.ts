@@ -39,7 +39,7 @@ export const UsageExamples: Story = {
         <h3 style="margin: 0 0 16px 0; color: #111827; font-size: 1.25rem; font-weight: 600;">Usage Examples</h3>
 
         <!-- Row 1: Primary Default -->
-        <div style="display: flex; gap: 24px;">
+        <div style="display: flex; gap: 24px; align-items: center;">
           <baps-split-button type="primary" size="sm" badge="8" forceState="rest">Button Text</baps-split-button>
           <baps-split-button type="primary" size="md" badge="8" forceState="rest">Button Text</baps-split-button>
           <baps-split-button type="primary" size="lg" badge="8" forceState="rest">Button Text</baps-split-button>
@@ -47,7 +47,7 @@ export const UsageExamples: Story = {
         </div>
 
         <!-- Row 2: Primary Hover -->
-        <div style="display: flex; gap: 24px;">
+        <div style="display: flex; gap: 24px; align-items: center;">
           <baps-split-button type="primary" size="sm" badge="8" forceState="hover">Button Text</baps-split-button>
           <baps-split-button type="primary" size="md" badge="8" forceState="hover">Button Text</baps-split-button>
           <baps-split-button type="primary" size="lg" badge="8" forceState="hover">Button Text</baps-split-button>
@@ -55,7 +55,7 @@ export const UsageExamples: Story = {
         </div>
 
         <!-- Row 3: Primary Active -->
-        <div style="display: flex; gap: 24px;">
+        <div style="display: flex; gap: 24px; align-items: center;">
           <baps-split-button type="primary" size="sm" badge="8" forceState="active">Button Text</baps-split-button>
           <baps-split-button type="primary" size="md" badge="8" forceState="active">Button Text</baps-split-button>
           <baps-split-button type="primary" size="lg" badge="8" forceState="active">Button Text</baps-split-button>
@@ -63,7 +63,7 @@ export const UsageExamples: Story = {
         </div>
 
         <!-- Row 4: Secondary Default -->
-        <div style="display: flex; gap: 24px;">
+        <div style="display: flex; gap: 24px; align-items: center;">
           <baps-split-button type="secondary" size="sm" badge="8" forceState="rest">Button Text</baps-split-button>
           <baps-split-button type="secondary" size="md" badge="8" forceState="rest">Button Text</baps-split-button>
           <baps-split-button type="secondary" size="lg" badge="8" forceState="rest">Button Text</baps-split-button>
@@ -71,7 +71,7 @@ export const UsageExamples: Story = {
         </div>
 
         <!-- Row 5: Secondary Hover -->
-        <div style="display: flex; gap: 24px;">
+        <div style="display: flex; gap: 24px; align-items: center;">
           <baps-split-button type="secondary" size="sm" badge="8" forceState="hover">Button Text</baps-split-button>
           <baps-split-button type="secondary" size="md" badge="8" forceState="hover">Button Text</baps-split-button>
           <baps-split-button type="secondary" size="lg" badge="8" forceState="hover">Button Text</baps-split-button>
@@ -79,7 +79,7 @@ export const UsageExamples: Story = {
         </div>
 
         <!-- Row 6: Secondary Active -->
-        <div style="display: flex; gap: 24px;">
+        <div style="display: flex; gap: 24px; align-items: center;">
           <baps-split-button type="secondary" size="sm" badge="8" forceState="active">Button Text</baps-split-button>
           <baps-split-button type="secondary" size="md" badge="8" forceState="active">Button Text</baps-split-button>
           <baps-split-button type="secondary" size="lg" badge="8" forceState="active">Button Text</baps-split-button>
@@ -87,7 +87,7 @@ export const UsageExamples: Story = {
         </div>
 
         <!-- Row 7: Disabled Flat -->
-        <div style="display: flex; gap: 24px;">
+        <div style="display: flex; gap: 24px; align-items: center;">
           <baps-split-button type="disabled-flat" size="sm" badge="8">Button Text</baps-split-button>
           <baps-split-button type="disabled-flat" size="md" badge="8">Button Text</baps-split-button>
           <baps-split-button type="disabled-flat" size="lg" badge="8">Button Text</baps-split-button>
@@ -95,7 +95,7 @@ export const UsageExamples: Story = {
         </div>
 
         <!-- Row 8: Disabled Outline -->
-        <div style="display: flex; gap: 24px;">
+        <div style="display: flex; gap: 24px; align-items: center;">
           <baps-split-button type="disabled-outline" size="sm" badge="8">Button Text</baps-split-button>
           <baps-split-button type="disabled-outline" size="md" badge="8">Button Text</baps-split-button>
           <baps-split-button type="disabled-outline" size="lg" badge="8">Button Text</baps-split-button>
