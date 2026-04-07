@@ -22,11 +22,21 @@ export class BapsTooltip extends LitElement {
       background: var(--color-white, #ffffff);
       border-radius: 8px;
       padding: 12px 16px;
-      box-shadow: 0px 12px 16px rgba(0, 0, 0, 0.08), 0px 4px 6px rgba(0, 0, 0, 0.04);
+      /* Use drop-shadow on the whole container so it includes the after-arrow */
+      filter: drop-shadow(0px 8px 12px rgba(0, 0, 0, 0.08)) drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.04));
       min-width: 200px;
       max-width: 320px;
       z-index: 100;
       pointer-events: auto;
+    }
+    
+    /* Small wrapper to prevent clipping of the drop-shadow */
+    .tooltip-container::before {
+      content: '';
+      position: absolute;
+      inset: -20px;
+      z-index: -2;
+      pointer-events: none;
     }
 
     /* Arrow Base */
@@ -35,7 +45,7 @@ export class BapsTooltip extends LitElement {
       position: absolute;
       width: 12px;
       height: 12px;
-      background: inherit;
+      background: var(--color-white, #ffffff);
       transform: rotate(45deg);
       box-sizing: border-box;
       z-index: -1;
@@ -45,7 +55,7 @@ export class BapsTooltip extends LitElement {
     .title {
       font-size: 14px;
       font-weight: 600;
-      color: var(--color-grey-900, #111827);
+      color: var(--color-grey-900);
       margin: 0 0 4px 0;
       line-height: 20px;
     }
@@ -53,7 +63,7 @@ export class BapsTooltip extends LitElement {
     .supporting-text {
       font-size: 12px;
       font-weight: 400;
-      color: var(--color-grey-600, #4b5563);
+      color: var(--color-grey-600);
       margin: 0 0 12px 0;
       line-height: 18px;
     }
@@ -67,7 +77,7 @@ export class BapsTooltip extends LitElement {
     .learn-more {
       font-size: 14px;
       font-weight: 600;
-      color: #B91C1C;
+      color: var(--color-primary-700);
       text-decoration: none;
       display: flex;
       align-items: center;
@@ -76,7 +86,7 @@ export class BapsTooltip extends LitElement {
     }
 
     .learn-more:hover {
-      color: #991B1B;
+      color: var(--color-primary-600);
     }
 
     .arrow-icon {
