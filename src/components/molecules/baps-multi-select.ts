@@ -86,23 +86,30 @@ export class BapsMultiSelect extends LitElement {
       align-items: center;
       background-color: var(--color-grey-100);
       color: var(--color-grey-600);
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 500;
-      padding: 4px 12px; /* Compact padding by default */
+      padding: 0 10px;
+      padding-right: 28px; /* Stable space reserved for absolute icon */
       border-radius: 4px;
       border: 1px solid var(--color-grey-200);
-      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-      line-height: normal;
+      transition: background-color 0.2s ease;
+      line-height: 22px;
       position: relative; 
       height: 24px;
       box-sizing: border-box;
       user-select: none;
-      white-space: nowrap;
+      max-width: 180px; /* Prevent runaway tag width */
     }
 
     .tag:hover {
-      padding-right: 32px; /* Expand only on hover to make room for X */
       background-color: var(--color-grey-200);
+    }
+
+    .tag-label {
+      flex: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
     .tag-close {
@@ -111,26 +118,22 @@ export class BapsMultiSelect extends LitElement {
       align-items: center;
       justify-content: center;
       color: var(--color-grey-400);
-      transition: opacity 0.2s ease;
+      transition: all 0.2s ease;
       opacity: 0;
       font-size: 16px;
       position: absolute;
-      right: 8px;
+      right: 6px;
       top: 50%;
       transform: translateY(-50%);
-      width: 14px;
-      height: 14px;
-      pointer-events: none; /* Only tag hover triggers it initially */
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      pointer-events: none;
     }
 
     .tag:hover .tag-close {
       opacity: 1;
       pointer-events: auto;
-    }
-
-    .tag:hover .tag-close {
-      opacity: 1;
-      width: 14px;
     }
 
     .tag-close:hover {
@@ -324,8 +327,8 @@ export class BapsMultiSelect extends LitElement {
               : this.selectedValues.map(value => {
                 const opt = this.options.find(o => o.value === value);
                 return html`
-                  <span class="tag">
-                    ${opt ? opt.label : value}
+                  <span class="tag" title="${opt ? opt.label : value}">
+                    <span class="tag-label">${opt ? opt.label : value}</span>
                     <span class="tag-close" @click="${(e: Event) => this._removeTag(value, e)}">×</span>
                   </span>
                 `;
