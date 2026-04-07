@@ -82,14 +82,17 @@ export class BapsDropdown extends LitElement {
       color: var(--color-grey-400, #94A3B8);
     }
 
-    .chevron {
+    .dropdown-chevron {
       width: 20px;
       height: 20px;
       transition: all 0.2s ease-in-out;
       color: var(--color-grey-500);
+      background: transparent !important;
+      border: none !important;
+      pointer-events: none;
     }
 
-    .active .chevron {
+    .active .dropdown-chevron {
       transform: rotate(180deg);
       color: var(--color-primary-700);
     }
@@ -202,7 +205,7 @@ export class BapsDropdown extends LitElement {
           <span class="value-text ${!selectedOption ? 'placeholder' : ''}">
             ${selectedOption ? selectedOption.label : this.placeholder}
           </span>
-          <svg class="chevron" viewBox="0 0 24 24" fill="none">
+          <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none">
             <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>

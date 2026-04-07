@@ -104,15 +104,18 @@ export class BapsMultiSelect extends LitElement {
       color: var(--color-red-500);
     }
 
-    .chevron {
+    .dropdown-chevron {
       width: 18px;
       height: 18px;
       transition: all 0.2s ease-in-out;
       color: var(--color-grey-500);
+      background: transparent !important;
+      border: none !important;
+      pointer-events: none;
       flex-shrink: 0;
     }
 
-    .active .chevron {
+    .active .dropdown-chevron {
       transform: rotate(180deg);
       color: var(--color-primary-700);
     }
@@ -271,7 +274,7 @@ export class BapsMultiSelect extends LitElement {
               })
             }
           </div>
-          <svg class="chevron" viewBox="0 0 24 24">
+          <svg class="dropdown-chevron" viewBox="0 0 24 24">
             <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
