@@ -206,7 +206,7 @@ export class BapsDropdown extends LitElement {
             ${selectedOption ? selectedOption.label : this.placeholder}
           </span>
           <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none">
-            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
 

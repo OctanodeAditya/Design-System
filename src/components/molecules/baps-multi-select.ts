@@ -274,8 +274,8 @@ export class BapsMultiSelect extends LitElement {
               })
             }
           </div>
-          <svg class="dropdown-chevron" viewBox="0 0 24 24">
-            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none">
+            <path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
 
