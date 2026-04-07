@@ -1,0 +1,11 @@
+{
+  "extends": ["html-validate:recommended"],
+  "rules": {
+    "no-dup-id": "error",
+    "attr-name-style": "off",
+    "require-sri": "off",
+    "no-trailing-whitespace": "off",
+    "void-content": "off"
+  },
+  "elements": ["html5"]
+}

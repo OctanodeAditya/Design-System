@@ -1,0 +1,67 @@
+# 🎨 BAPS Design System
+
+Welcome to the **BAPS Design System**! This repository provides a collection of framework-agnostic Lit Web Components and a comprehensive CSS token library to help you build beautiful, consistent user interfaces.
+
+## 🚀 Getting Started
+
+The design system is built using standard web technologies (HTML, CSS, and Web Components via Lit), ensuring it can easily be consumed in any modern framework (React, Vue, Angular, etc.) or just plain HTML.
+
+### 1. Include the Styles
+
+Our design system relies on a central set of design tokens and global styles. Import `index.css` into your application's entry point:
+
+```html
+<!-- In your index.html -->
+<link rel="stylesheet" href="./src/index.css" />
+```
+
+### 2. Import Components
+
+Import the components you need into your JavaScript/TypeScript entry point. Since they are standard Web Components, they register themselves globally once imported:
+
+```typescript
+// Import individual components in your JS/TS
+import './src/components/atoms/baps-button';
+import './src/components/atoms/baps-avatar';
+import './src/components/molecules/baps-split-button';
+import './src/components/organisms/baps-header';
+
+// Or in HTML:
+// <script type="module" src="./src/components/atoms/baps-button.ts"></script>
+```
+
+### 3. Use in HTML
+
+Once imported, you can use them directly in your HTML templates just like any standard element:
+
+```html
+<baps-button type="primary" size="large">Primary Action</baps-button>
+
+<baps-split-button type="primary" size="lg" badge="8">
+  Export Data
+</baps-split-button>
+
+<baps-avatar size="lg" variant="primary" initials="GP" online badge></baps-avatar>
+```
+
+## 📚 Component Library
+
+You are currently viewing our Storybook documentation! 
+Use the sidebar on the left to browse through our Atomic Design categorizations:
+*   **Atoms**: Basic building blocks like Buttons, Avatars, Inputs, and Radios.
+*   **Molecules**: Combinations of atoms, such as Avatar Groups, Cards, and Split Buttons.
+*   **Organisms**: Complex sections structured from smaller components, like Headers.
+
+## 🎨 Design Tokens
+
+We use a `4pt` grid system and a foundational color palette centered around our crimson brand colors. You can reference all design tokens directly in `src/styles/tokens.css`.
+
+Example usage in your custom CSS:
+```css
+.my-custom-element {
+  padding: var(--spacing-16);
+  background-color: var(--color-red-500);
+  border-radius: var(--border-radius-base);
+  font-family: var(--font-family-base);
+}
+```

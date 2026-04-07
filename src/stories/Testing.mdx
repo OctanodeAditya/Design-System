@@ -1,0 +1,77 @@
+# 🧪 Quality & Testing Strategy (WCAG 2.1 AA)
+
+The BAPS Design System is built with a "Quality First" mindset. We adhere to **WCAG 2.1 Level AA** standards to ensure our components are accessible to everyone.
+
+---
+
+## 🥇 Accessibility Compliance (AXE & Pa11y)
+
+| Tool | Format | Target | Usage |
+| :--- | :--- | :--- | :--- |
+| **Axe Core** | Inline UI | WCAG 2.1 AA | Live developer feedback in Storybook. |
+| **Pa11y CI** | Terminal | WCAG 2.1 AA | Automated CLI scans for developers. |
+| **Pa11y HTML**| Dashboard | WCAG 2.1 AA | visual compliance reports for stakeholders. |
+
+### 🚀 Generating a Visual Report
+To generate a comprehensive HTML report of all accessibility findings:
+```bash
+npm run test:a11y:report
+```
+*This will create a `pa11y-report/` directory with a visual dashboard.*
+
+---
+
+## 💡 Accessibility Best Practices
+
+### 1. Semantic Structure
+Always use the correct HTML element for the job. Do not use a `<div>` as a button.
+- **Good**: `<button type="button">Click Me</button>`
+- **Bad**: `<div onclick="handleClick()">Click Me</div>`
+
+### 2. Focus Management
+Ensure that interactive elements have a clear `:focus` state. Our components use a consistent `outline` system defined in `globals.css`.
+
+### 3. Accessible Labels
+If a component doesn't have visible text (like an icon-only button), always provide an `aria-label`.
+
+```typescript
+// Example: Icon-only button with aria-label
+render() {
+  return html`
+    <button aria-label="Close settings">
+      <baps-icon name="close"></baps-icon>
+    </button>
+  `;
+}
+```
+
+---
+
+## 🏗️ Semantic Integrity (HTML Validation)
+
+We use **html-validate** to ensure our Lit components emit valid HTML structures.
+
+### Running Validation
+```bash
+npm run test:html
+```
+
+### Common Fixes:
+- **Missing button type**: Always add `type="button"` to avoid accidental form submissions.
+- **Duplicate IDs**: Ensure that repeated components generate unique IDs.
+
+---
+
+## 🤖 CI/CD Integration
+Our quality gates are automated using **GitHub Actions**. Every Pull Request triggers:
+1. **HTML Validation**: Checks for semantic errors.
+2. **Accessibility Scan**: Fails the build if any WCAG 2.1 AA violations are detected.
+
+---
+
+## 🎯 Test Coverage Scope
+The automated audit covers **100%** of the following:
+- **Atoms**: Buttons, Inputs, Avatars, Checkboxes.
+- **Molecules**: Cards, Split-Buttons, Modals.
+- **Organisms**: Headers, Footers, Navigation Bars.
+- **States**: Default, Hover, Busy, Disabled, and Error states.

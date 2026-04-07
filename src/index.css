@@ -1,0 +1,22 @@
+@import './styles/tokens.css';
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap');
+
+:root {
+  font-family: var(--font-family-base);
+  line-height: var(--font-p-16-height);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-p-16-size);
+
+  color-scheme: light dark;
+  color: var(--color-grey-900);
+  background-color: var(--color-white);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}

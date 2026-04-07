@@ -1,0 +1,17 @@
+{
+  "defaults": {
+    "standard": "WCAG2AA",
+    "timeout": 60000,
+    "wait": 500,
+    "chromeLaunchConfig": {
+      "args": ["--no-sandbox", "--disable-setuid-sandbox"]
+    }
+  },
+  "urls": [
+    "http://localhost:6006/iframe.html?id=atoms-button--default",
+    "http://localhost:6006/iframe.html?id=atoms-avatar--text-avatar",
+    "http://localhost:6006/iframe.html?id=molecules-card--default",
+    "http://localhost:6006/iframe.html?id=molecules-splitbutton--default",
+    "http://localhost:6006/iframe.html?id=organisms-header--default"
+  ]
+}
