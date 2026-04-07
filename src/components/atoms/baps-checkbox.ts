@@ -69,11 +69,11 @@ export class MyCheckbox extends LitElement {
       background-color: var(--color-grey-100);
     }
     .checkbox-wrapper.disabled .box.checked, .checkbox-wrapper.disabled .box.indeterminated {
-      background-color: var(--color-grey-300);
-      border-color: var(--color-grey-300);
+      background-color: var(--color-grey-400);
+      border-color: var(--color-grey-400);
     }
     .checkbox-wrapper.disabled .label-text {
-      color: var(--color-grey-300);
+      color: var(--color-grey-500);
     }
   `;
 

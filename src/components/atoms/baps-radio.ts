@@ -65,13 +65,13 @@ export class MyRadio extends LitElement {
       background-color: var(--color-grey-100);
     }
     .radio-wrapper.disabled .circle.checked {
-      border-color: var(--color-grey-300);
+      border-color: var(--color-grey-400);
     }
     .radio-wrapper.disabled .dot {
-      background-color: var(--color-grey-300);
+      background-color: var(--color-grey-400);
     }
     .radio-wrapper.disabled .label-text {
-      color: var(--color-grey-300);
+      color: var(--color-grey-500);
     }
   `;
 
