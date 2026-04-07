@@ -100,25 +100,25 @@ export class MySplitButton extends LitElement {
       border: 1px solid #B91C1C;
     }
     .type-primary button { color: var(--color-white); }
-    .type-primary .divider { background-color: rgba(255, 255, 255, 0.2); }
+    .type-primary .divider { background-color: rgba(255, 255, 255, 0.3); }
     .type-primary .badge { background-color: var(--color-white); color: #B91C1C; }
 
     /* Primary Interactive */
     .type-primary .main-action:hover,
     .type-primary.force-hover .main-action {
-      background-color: #991B1B; 
+      background-color: #A11A1A; 
     }
     .type-primary .dropdown-action:hover,
     .type-primary.force-hover .dropdown-action {
-      background-color: #991B1B; 
+      background-color: #A11A1A; 
     }
     .type-primary .main-action:active,
     .type-primary.force-active .main-action {
-      background-color: #7F1D1D; 
+      background-color: #8C1616; 
     }
     .type-primary .dropdown-action:active,
     .type-primary.force-active .dropdown-action {
-      background-color: #7F1D1D; 
+      background-color: #8C1616; 
     }
 
     /* ----- TYPE: SECONDARY (Outline) ----- */
@@ -200,8 +200,8 @@ export class MySplitButton extends LitElement {
 
     const clockIcon = html`
       <svg class="icon" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10"></circle>
-        <path d="M12 6v6l4 2"></path>
+        <circle cx="12" cy="12" r="10" stroke-dasharray="2,2"></circle>
+        <path d="M12 7v5l3 3"></path>
       </svg>
     `;
 
