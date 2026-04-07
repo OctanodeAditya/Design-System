@@ -138,7 +138,7 @@ export class BapsTooltip extends LitElement {
   @property({ type: String, attribute: 'supporting-text' }) supportingText = "I'm Supporting Text";
   @property({ type: String, attribute: 'link-text' }) linkText = "Learn more";
   @property({ type: String, attribute: 'link-href' }) linkHref = "#";
-  @property({ type: String }) placement: TooltipPlacement = 'top-center';
+  @property({ type: String, reflect: true }) placement: TooltipPlacement = 'top-center';
 
   render() {
     return html`
