@@ -59,8 +59,8 @@ export class MySplitButton extends LitElement {
     .size-lg .main-action { padding: 0 var(--spacing-20); font-size: var(--font-p-16-size); height: 48px; }
     .size-lg .dropdown-action { padding: 0 var(--spacing-16); height: 48px; }
     
-    .size-xl .main-action { padding: 0 var(--spacing-24); font-size: var(--font-sub-20-size); height: 56px; }
-    .size-xl .dropdown-action { padding: 0 var(--spacing-20); height: 56px; }
+    .size-xl .main-action { padding: 0 var(--spacing-24); font-size: var(--font-sub-20-size); height: 64px; }
+    .size-xl .dropdown-action { padding: 0 var(--spacing-20); height: 64px; }
 
     /* Icons inside buttons */
     svg.icon {
@@ -87,7 +87,7 @@ export class MySplitButton extends LitElement {
     .size-sm .badge { width: 16px; height: 16px; font-size: 10px; }
     .size-md .badge { width: 20px; height: 20px; font-size: 12px; }
     .size-lg .badge { width: 24px; height: 24px; font-size: 14px; }
-    .size-xl .badge { width: 28px; height: 28px; font-size: 16px; }
+    .size-xl .badge { width: 32px; height: 32px; font-size: 18px; }
 
     /* =========================
        THEMES AND STATES
@@ -106,19 +106,19 @@ export class MySplitButton extends LitElement {
     /* Primary Interactive */
     .type-primary .main-action:hover,
     .type-primary.force-hover .main-action {
-      background-color: #A11A1A; 
+      background-color: #DC2626; 
     }
     .type-primary .dropdown-action:hover,
     .type-primary.force-hover .dropdown-action {
-      background-color: #A11A1A; 
+      background-color: #B91C1C; 
     }
     .type-primary .main-action:active,
     .type-primary.force-active .main-action {
-      background-color: #8C1616; 
+      background-color: #991B1B; 
     }
     .type-primary .dropdown-action:active,
     .type-primary.force-active .dropdown-action {
-      background-color: #8C1616; 
+      background-color: #7F1D1D; 
     }
 
     /* ----- TYPE: SECONDARY (Outline) ----- */

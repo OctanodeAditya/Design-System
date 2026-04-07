@@ -33,8 +33,8 @@ export const Default: Story = {
 
 export const UsageExamples: Story = {
   render: () => html`
-    <div style="background-color: #f9fafb; padding: 40px; display: flex; justify-content: center; font-family: sans-serif;">
-      <div style="background-color: #ffffff; padding: 40px; border-radius: 8px; border: 1px solid #e5e7eb; display: flex; flex-direction: column; gap: 24px; min-width: 800px; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);">
+    <div style="background-color: #f9fafb; padding: 60px; display: flex; justify-content: center; font-family: sans-serif;">
+      <div style="background-color: #ffffff; padding: 40px; border-radius: 8px; border: 1px solid #e5e7eb; display: flex; flex-direction: column; gap: 24px; width: fit-content; min-width: 900px; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);">
         
         <h3 style="margin: 0 0 16px 0; color: #111827; font-size: 1.25rem; font-weight: 600;">Usage Examples</h3>
 
