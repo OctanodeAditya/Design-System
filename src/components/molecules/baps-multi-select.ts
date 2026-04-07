@@ -61,9 +61,10 @@ export class BapsMultiSelect extends LitElement {
     }
 
     .trigger.disabled {
-      background-color: var(--color-grey-100, #F1F5F9);
-      border-color: var(--color-grey-200, #E2E8F0);
+      background-color: var(--color-grey-100);
+      border-color: var(--color-grey-200);
       cursor: not-allowed;
+      opacity: 0.7;
     }
 
     .tags-container {
@@ -71,6 +72,7 @@ export class BapsMultiSelect extends LitElement {
       flex-wrap: wrap;
       gap: 6px;
       flex: 1;
+      align-items: center;
     }
 
     .placeholder {
@@ -82,26 +84,37 @@ export class BapsMultiSelect extends LitElement {
     .tag {
       display: inline-flex;
       align-items: center;
-      gap: 4px;
-      background-color: var(--color-grey-100, #F1F5F9);
-      color: var(--color-grey-700, #334155);
-      font-size: 13px;
+      gap: 8px;
+      background-color: var(--color-grey-100);
+      color: var(--color-grey-700);
+      font-size: 14px;
       font-weight: 500;
-      padding: 4px 8px;
+      padding: 4px 10px;
       border-radius: 4px;
-      border: 1px solid var(--color-grey-200, #E2E8F0);
+      border: 1px solid var(--color-grey-300);
+      transition: all 0.2s ease;
+      line-height: normal;
     }
 
     .tag-close {
       cursor: pointer;
       display: flex;
       align-items: center;
-      color: var(--color-grey-500);
-      transition: color 0.2s;
+      color: var(--color-grey-400);
+      transition: all 0.2s ease;
+      opacity: 0;
+      font-size: 16px;
+      width: 0;
+      overflow: hidden;
+    }
+
+    .tag:hover .tag-close {
+      opacity: 1;
+      width: 14px;
     }
 
     .tag-close:hover {
-      color: var(--color-red-500);
+      color: var(--color-red-600);
     }
 
     .dropdown-chevron {
@@ -118,6 +131,24 @@ export class BapsMultiSelect extends LitElement {
     .active .dropdown-chevron {
       transform: rotate(180deg);
       color: var(--color-primary-700);
+    }
+
+    .clear-all {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      color: var(--color-grey-400);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .clear-all:hover {
+      background-color: var(--color-grey-100);
+      color: var(--color-red-600);
     }
 
     /* Menu Styling */
@@ -231,6 +262,13 @@ export class BapsMultiSelect extends LitElement {
     this.requestUpdate();
   }
 
+  private _clearAll(e: Event) {
+    e.stopPropagation();
+    this.selectedValues = [];
+    this.dispatchEvent(new CustomEvent('change', { detail: { value: this.selectedValues } }));
+    this.requestUpdate();
+  }
+
   connectedCallback() {
     super.connectedCallback();
     document.addEventListener('click', this._handleOutsideClick);
@@ -274,9 +312,15 @@ export class BapsMultiSelect extends LitElement {
               })
             }
           </div>
-          <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none">
-            <path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+
+          <div style="display: flex; align-items: center; gap: 4px;">
+            ${this.selectedValues.length > 0 ? html`
+              <div class="clear-all" @click="${this._clearAll}" title="Clear all selection">×</div>
+            ` : ''}
+            <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none">
+              <path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
         </div>
 
         <div class="menu ${this._isOpen ? 'open' : ''}">
